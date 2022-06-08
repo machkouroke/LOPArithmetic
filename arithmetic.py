@@ -2,7 +2,7 @@ import random as rd
 
 
 def menu():
-    item_ = {'1': 'simple operations with numbers 2-9', '2': 'integral squares of 11-29'}
+    item_ = {'1': 'simple operations with numbers 2-9', '2': 'Squares of number between 11-29'}
     while 1:
         print('Which level do you want? Enter a number:')
         for x in item_:
@@ -15,8 +15,10 @@ def menu():
 
 
 def quiz(choice):
+    global true_answer
     mark = 0
-    for i in range(5):
+    for _ in range(5):
+        # noinspection PyTupleAssignmentBalance
         a, b, sign = *[rd.randint(2, 9) for _ in range(2)], rd.choice(["+", "-", "*"])
         c = rd.randint(11, 29)
         while 1:
